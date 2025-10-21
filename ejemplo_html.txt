@@ -1,0 +1,772 @@
+<div class="container my-4">
+
+    <!-- HEADER -->
+    <div class="header text-center">
+        <h1>Análisis de Partido Avanzado</h1>
+        <h2><span class="home-color">Slovan Bratislava B</span> vs <span class="away-color">STK Samorin</span></h2>
+        <p class="mb-0">Fecha: 2025-10-19 16:30</p>
+    </div>
+
+    <!-- CLASIFICACIÓN Y O/U -->
+    <div class="card mb-4">
+        <div class="card-header"><h2 class="h5 mb-0">📊 Clasificación en Liga y Estadísticas O/U</h2></div>
+        <div class="card-body">
+            <div class="row">
+                <!-- Local -->
+                <div class="col-md-6 border-end">
+                    <h4 class="card-title-custom text-center home-color">Slovan Bratislava B</h4>
+                    
+                        <p class="text-center"><strong>Posición:</strong> <span class="badge bg-primary fs-6">9</span></p>
+                        <h6>Estadísticas Totales</h6>
+                        <p><b>PJ:</b> 12 | <b>V-E-D:</b> 4-3-5 | <b>GF:GC:</b> 14:17</p>
+                        <h6>Est. como Local (en Liga)</h6>
+                        <p><b>PJ:</b> 5 | <b>V-E-D:</b> 2-1-2 | <b>GF:GC:</b> 6:6</p>
+                    
+                    <hr>
+                    <h6 class="text-center">Over/Under Odds % (Últ. 10 partidos)</h6>
+                    
+                        <p class="text-center">
+                            <span style="color: green; font-weight: bold;">Over: 30.0%</span> |
+                            <span style="color: red; font-weight: bold;">Under: 40.0%</span> |
+                            <span style="color: grey;">Push: 30.0%</span>
+                        </p>
+                    
+                </div>
+                <!-- Visitante -->
+                <div class="col-md-6">
+                    <h4 class="card-title-custom text-center away-color">STK Samorin</h4>
+                    
+                         <p class="text-center"><strong>Posición:</strong> <span class="badge bg-warning text-dark fs-6">14</span></p>
+                        <h6>Estadísticas Totales</h6>
+                        <p><b>PJ:</b> 12 | <b>V-E-D:</b> 3-3-6 | <b>GF:GC:</b> 17:22</p>
+                        <h6>Est. como Visitante (en Liga)</h6>
+                        <p><b>PJ:</b> 5 | <b>V-E-D:</b> 1-0-4 | <b>GF:GC:</b> 6:11</p>
+                    
+                    <hr>
+                    <h6 class="text-center">Over/Under Odds % (Últ. 9 partidos)</h6>
+                    
+                        <p class="text-center">
+                            <span style="color: green; font-weight: bold;">Over: 56.0%</span> |
+                            <span style="color: red; font-weight: bold;">Under: 33.0%</span> |
+                            <span style="color: grey;">Push: 11.0%</span>
+                        </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ANÁLISIS DETALLADO -->
+    <h3 class="section-header">🎯 Análisis Detallado del Partido</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row text-center mb-3">
+                <div class="col-4"><h5>Resultado Final</h5><p class="fs-4 fw-bold">1 - 4</p></div>
+                <div class="col-4"><h5>AH (Línea Inicial)</h5><p class="fs-4 fw-bold">0</p></div>
+                <div class="col-4"><h5>Goles (Línea Inicial)</h5><p class="fs-4 fw-bold">3</p></div>
+            </div>
+            <!-- Análisis de Mercado vs H2H (HTML generado desde Python) -->
+            
+    <div style="border-left: 4px solid #1E90FF; padding: 12px 15px; margin-top: 15px; background-color: #f0f2f6; border-radius: 5px; font-size: 0.95em;">
+        <p style="margin-bottom: 12px;"><strong>📊 Análisis de Mercado vs. Histórico H2H</strong><br><span style="font-style: italic; font-size: 0.9em;">Líneas actuales: AH 0 / Goles 3.0 | Favorito: Ninguno (línea en 0)</span></p>
+        <div style="margin-bottom: 10px;">  <strong style="font-size: 1.05em;">🏟️ Análisis del Precedente en Este Estadio</strong>  <ul style="margin: 5px 0 0 20px; padding-left: 0;"><li><span class="ah-value">Hándicap:</span> El mercado establece un favorito claro, considerándolo <strong>mucho más favorito</strong> que en el precedente (movimiento: <strong style="color: green; font-size:1.2em;">0 → 0</strong>). Con el resultado (0:2), la línea actual se habría considerado <span style="color: red; font-weight: bold;">NO CUBIERTO ❌</span>.</li><li><span class="score-value">Goles:</span> El partido tuvo <strong>2 goles</strong>, por lo que la línea actual habría resultado <span style="color: green; font-weight: bold;">OVER</span>.</li></ul></div>
+        <div>  <strong style="font-size: 1.05em;">✈️ Análisis del H2H General Más Reciente</strong>  <ul style="margin: 5px 0 0 20px; padding-left: 0;"><li><span class="ah-value">Hándicap:</span> El mercado <strong>ha eliminado al favorito</strong> ('Slovan Bratislava B') que existía en el precedente (movimiento: <strong style="color: orange; font-size:1.2em;">-0.25 → 0</strong>). Con el resultado (0:2), la línea actual se habría considerado <span style="color: green; font-weight: bold;">CUBIERTO ✅</span>.</li><li><span class="score-value">Goles:</span> El partido tuvo <strong>2 goles</strong>, por lo que la línea actual habría resultado <span style="color: green; font-weight: bold;">OVER</span>.</li></ul></div>
+    </div>
+    
+        </div>
+    </div>
+
+    <!-- ANÁLISIS SIMPLIFICADO -->
+    <h3 class="section-header">🎯 Análisis Simplificado</h3>
+    <div class="card mb-4">
+        <div class="card-body">
+            
+        </div>
+    </div>
+
+    <!-- RENDIMIENTO RECIENTE Y H2H INDIRECTO -->
+    <h3 class="section-header">⚡ Rendimiento Reciente y H2H Indirecto</h3>
+    <div class="row">
+        <!-- Último Local -->
+        <div class="col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">Último <span class="home-color">Slovan Bratislava B</span> (Casa)</h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center"><font size="5">2 - 4</font></p>
+                    <p class="text-center"><span style="color: #000000; font-weight: bold;">Slovan Bratislava B</span> vs <span style="color: #FFA500; font-weight: bold;">Povazska Bystrica</span></p>
+                    <p class="text-muted small">Fecha: 14-10-2025</p>
+                    <p><b>AH:</b> <span class="ah-value">-0.25</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    
+                    
+                        <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">7</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">8</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">4</span></td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">6</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">105</span></td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away"><span style="color: red;">84</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">70</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: red;">49</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">0</td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away">0</td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                
+                </div>
+            </div>
+        </div>
+        <!-- Último Visitante -->
+        <div class="col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">Último <span class="away-color">STK Samorin</span> (Fuera)</h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center"><font size="5">2 - 1</font></p>
+                    <p class="text-center"><span style="color: #000000; font-weight: bold;">Tatran LM</span> vs <span style="color: #FFA500; font-weight: bold;">STK Samorin</span></p>
+                    <p class="text-muted small">Fecha: 04-10-2025</p>
+                    <p><b>AH:</b> <span class="ah-value">1.25</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    
+                    
+                         <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">11</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">13</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">4</td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away">4</td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">93</span></td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">105</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">58</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: red;">53</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">0</td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away">0</td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                
+                </div>
+            </div>
+        </div>
+        <!-- H2H Rivales (Col3) -->
+        <div class="col-lg-4 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">🆚 H2H Rivales (Col3)</h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center"><font size="5">2 - 2</font></p>
+                    <p class="text-center"><span class="home-color">Povazska Bystrica</span> vs <span class="away-color">Tatran LM</span></p>
+                    <p class="text-muted small">Fecha: N/A</p>
+                    <p><b>AH:</b> <span class="ah-value">-</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    
+                    
+                        <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">8</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">10</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">4</span></td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away"><span style="color: red;">3</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">100</span></td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">147</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">62</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">79</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">1</span></td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away"><span style="color: red;">0</span></td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                    <!-- Análisis mejorado de H2H Rivales -->
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MÁS SECCIONES... (Puedes continuar este patrón para las comparativas y H2H directos) -->
+
+    <!-- COMPARATIVAS INDIRECTAS -->
+    <h3 class="section-header">🔁 Comparativas Indirectas</h3>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">
+                    <span class="home-color">Slovan Bratislava B</span> vs. Últ. Rival de <span class="away-color">STK Samorin</span>
+                </h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center"><font size="5">2 - 1</font></p>
+                    <p class="text-center"><span style="color: #000000; font-weight: bold;">Tatran LM</span> vs <span style="color: #FFA500; font-weight: bold;">Slovan Bratislava B</span></p>
+                    <p>⚖️ <b>AH:</b> <span class="ah-value">1</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    <p>🏟️ <b>Localía de 'Slovan Bratislava B':</b> <span class="home-color">A</span></p>
+                    
+                    
+                        <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">11</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: red;">10</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">2</span></td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">5</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">134</span></td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away"><span style="color: red;">99</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">84</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: red;">64</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">0</td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away">0</td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                    <!-- Análisis de comparativa indirecta -->
+                    
+                
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">
+                    <span class="away-color">STK Samorin</span> vs. Últ. Rival de <span class="home-color">Slovan Bratislava B</span>
+                </h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center"><font size="5">0 - 2</font></p>
+                    <p class="text-center"><span style="color: #000000; font-weight: bold;">STK Samorin</span> vs <span style="color: #FFA500; font-weight: bold;">Povazska Bystrica</span></p>
+                    <p>⚖️ <b>AH:</b> <span class="ah-value">0</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    <p>🏟️ <b>Localía de 'STK Samorin':</b> <span class="away-color">H</span></p>
+                    
+                    
+                        <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">10</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: red;">6</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">4</span></td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away"><span style="color: red;">3</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">107</span></td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away"><span style="color: red;">76</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">66</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: red;">53</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">0</td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away">0</td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                    <!-- Análisis de comparativa indirecta -->
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ANÁLISIS CONTRA RIVAL DEL RIVAL - Versión Gráfica -->
+    <!-- ANÁLISIS CONTRA RIVAL DEL RIVAL - Versión Gráfica -->
+<h3 class="section-header">🔄 Análisis Contra Rival del Rival</h3>
+<div class="row">
+    <!-- Análisis del Equipo Local contra el Rival del Equipo Visitante -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-primary">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title-custom mb-0">
+                    <span class="home-color">Slovan Bratislava B</span> vs Rival de <span class="away-color">STK Samorin</span>
+                </h5>
+            </div>
+            <div class="card-body">
+                
+                    <div class="text-center mb-3">
+                        <span class="badge bg-info fs-6">
+                            Rival: Povazska Bystrica
+                        </span>
+                    </div>
+                    
+                    <!-- Partidos detallados -->
+                    <h6 class="border-bottom pb-2">Partidos Recientes:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Local</th>
+                                    <th>Resultado</th>
+                                    <th>Visitante</th>
+                                    <th>AH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="small">14-10-2025</td>
+                                    <td class="small">
+                                        <span class="fw-bold">
+                                            Slovan Brati...
+                                        </span>
+                                    </td>
+                                    <td class="score-value text-center">2:4</td>
+                                    <td class="small">
+                                        <span class="">
+                                            Povazska Bys...
+                                        </span>
+                                    </td>
+                                    <td class="ah-value text-center">-0.25</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Análisis del Equipo Visitante contra el Rival del Equipo Local -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="card-title-custom mb-0">
+                    <span class="away-color">STK Samorin</span> vs Rival de <span class="home-color">Slovan Bratislava B</span>
+                </h5>
+            </div>
+            <div class="card-body">
+                
+                    <div class="text-center mb-3">
+                        <span class="badge bg-info fs-6">
+                            Rival: Tatran LM
+                        </span>
+                    </div>
+                    
+                    <!-- Partidos detallados -->
+                    <h6 class="border-bottom pb-2">Partidos Recientes:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Local</th>
+                                    <th>Resultado</th>
+                                    <th>Visitante</th>
+                                    <th>AH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="small">04-10-2025</td>
+                                    <td class="small">
+                                        <span class="">
+                                            Tatran LM
+                                        </span>
+                                    </td>
+                                    <td class="score-value text-center">2:1</td>
+                                    <td class="small">
+                                        <span class="fw-bold">
+                                            STK Samorin
+                                        </span>
+                                    </td>
+                                    <td class="ah-value text-center">1.25</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- ANÁLISIS H2H DIRECTO - Versión Gráfica -->
+    <!-- ANÁLISIS H2H DIRECTO - Versión Gráfica -->
+<h3 class="section-header">⚔️ Análisis H2H Directo</h3>
+<div class="row">
+    <!-- Enfrentamientos Directos en Este Estadio -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-primary">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title-custom mb-0">🏟️ Enfrentamientos en Este Estadio</h5>
+            </div>
+            <div class="card-body">
+                
+                    
+                    
+                    <!-- Resultado principal -->
+                    <div class="text-center mb-3 p-3 bg-light rounded">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="home-color fw-bold">Slovan Bratisla...</span>
+                            <span class="score-value mx-3 fs-3">0 : 2</span>
+                            <span class="away-color fw-bold">STK Samorin</span>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-info">Handicap: 0</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Partidos históricos en este estadio -->
+                    <h6 class="border-bottom pb-2">Historial en este Estadio:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Resultado</th>
+                                    <th>AH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td colspan="3" class="text-center">No hay datos históricos disponibles</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Enfrentamientos Directos Generales -->
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-warning">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="card-title-custom mb-0">🌍 Enfrentamientos Generales</h5>
+            </div>
+            <div class="card-body">
+                
+                    
+                    
+                    <!-- Resultado principal -->
+                    <div class="text-center mb-3 p-3 bg-light rounded">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="home-color fw-bold">STK Samorin</span>
+                            <span class="score-value mx-3 fs-3">0 : 2</span>
+                            <span class="away-color fw-bold">Slovan Bratisla...</span>
+                        </div>
+                        <div class="mt-2">
+                            <span class="badge bg-info">Handicap: -0.25</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Partidos históricos generales -->
+                    <h6 class="border-bottom pb-2">Historial General:</h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-striped">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Resultado</th>
+                                    <th>AH</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                <tr>
+                                    <td colspan="3" class="text-center">No hay datos históricos disponibles</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <!-- NOTA DEL ANALISTA -->
+    
+
+    <!-- H2H DIRECTO -->
+    <h3 class="section-header">🔰 Enfrentamientos Directos (H2H)</h3>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">Último Partido en este Estadio</h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center">
+                        <span class="home-color">Slovan Bratislava B</span>
+                        <span class="score-value">0 : 2</span>
+                        <span class="away-color">STK Samorin</span>
+                    </p>
+                    <p class="text-center"><b>Handicap Inicial:</b> <span class="ah-value">0</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    
+                        <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">11</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: red;">7</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">3</td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away">3</td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">92</td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away">92</td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">61</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: red;">43</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">0</td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away">0</td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card h-100">
+                <div class="card-header"><h5 class="card-title-custom mb-0">Último Partido General</h5></div>
+                <div class="card-body">
+                
+                    
+                    <p class="text-center">
+                        <span class="home-color">STK Samorin</span>
+                        <span class="score-value">0 : 2</span>
+                        <span class="away-color">Slovan Bratislava B</span>
+                    </p>
+                    <p class="text-center"><b>Handicap Inicial:</b> <span class="ah-value">-0.25</span> | <b>O/U:</b> <span class="ou-value"></span></p>
+                    
+                        <h6 class="mt-3 text-muted">👁️ Est. Progresión</h6>
+                        
+                        
+<table class="stat-table">
+    <thead>
+        <tr>
+            <th class="stat-value-home">Casa</th>
+            <th class="stat-label">Estadística</th>
+            <th class="stat-value-away">Fuera</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">5</span></td>
+            <td class="stat-label">Tiros</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">6</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">1</span></td>
+            <td class="stat-label">Tiros a Puerta</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">3</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: green; font-weight: bold;">113</span></td>
+            <td class="stat-label">Ataques</td>
+            <td class="stat-value-away"><span style="color: red;">105</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home"><span style="color: red;">63</span></td>
+            <td class="stat-label">Ataques Peligrosos</td>
+            <td class="stat-value-away"><span style="color: green; font-weight: bold;">72</span></td>
+        </tr>
+    
+        <tr>
+            <td class="stat-value-home">0</td>
+            <td class="stat-label">Red Cards</td>
+            <td class="stat-value-away">0</td>
+        </tr>
+    
+    </tbody>
+</table>
+                    
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
