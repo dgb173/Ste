@@ -12,6 +12,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+from html import escape
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -106,6 +107,111 @@ HTML_WRAPPER_START = """
 HTML_WRAPPER_END = "</div></body></html>"
 
 PW_FLAG = PROJECT_ROOT / ".playwright_ready"
+
+
+GLOBAL_STYLES = """
+<style>
+div[data-testid="stAppViewContainer"] {
+    background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 60%);
+}
+div[data-testid="stHeader"] {
+    background: transparent;
+}
+.match-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 8px;
+}
+.match-card {
+    background: #ffffff;
+    border: 1px solid #dee4f3;
+    border-radius: 14px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+.match-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.match-card__teams {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+.match-card__vs {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+.match-card__score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+.match-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+.match-card__tag {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    letter-spacing: 0.02em;
+}
+.match-card__meta {
+    font-size: 0.85rem;
+    color: #475569;
+}
+.match-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.match-action-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #cbd5f5;
+    color: #0f172a;
+    font-weight: 600;
+    text-decoration: none;
+    background: #f1f5ff;
+    transition: all 0.2s ease-in-out;
+}
+.match-action-link:hover {
+    background: #e0e9ff;
+    border-color: #94a3ff;
+}
+</style>
+"""
+
+
+def inject_global_styles() -> None:
+    st.markdown(GLOBAL_STYLES, unsafe_allow_html=True)
+
+
+def safe_text(value: Any, default: str = "") -> str:
+    if value is None:
+        return default
+    return escape(str(value))
 
 
 def ensure_playwright() -> None:
@@ -311,36 +417,50 @@ def render_recent_card(title: str, block: Optional[Dict[str, Any]]) -> str:
     return "".join(html)
 
 
-def render_comparativa_card(card: Optional[Dict[str, Any]]) -> str:
-    if not card:
-        return ""
-    title = f"{card.get('title_home_name', '')} vs. Últ. Rival de {card.get('title_away_name', '')}".strip()
-    html: List[str] = ['<div class="preview-card">', f"<h6>{title}</h6>"]
-    score = card.get("score")
-    if score:
-        html.append(f'<div class="score">{score.replace(":", " - ")}</div>')
-    teams = ""
-    if card.get("home_team") and card.get("away_team"):
-        teams = f'<div class="teams-line">{card["home_team"]} vs {card["away_team"]}</div>'
-    if teams:
-        html.append(teams)
-    pills = []
-    if card.get("localia"):
-        pills.append(f'<span class="meta-pill">Localía: {card["localia"]}</span>')
-    if card.get("ah"):
-        pills.append(f'<span class="meta-pill">AH: {card["ah"]}</span>')
-    if card.get("ou"):
-        pills.append(f'<span class="meta-pill">O/U: {card["ou"]}</span>')
-    if pills:
-        html.append(f"<div>{''.join(pills)}</div>")
-    cover_html = format_cover_status(card.get("cover_status"))
-    if cover_html:
-        html.append(f'<div class="meta-line">Estado: {cover_html}</div>')
-    stats_html = render_stats_table_html(card.get("stats_rows"))
-    if stats_html:
-        html.append(stats_html)
-    if card.get("analysis"):
-        html.append(f'<div class="analysis-text">{card["analysis"]}</div>')
+def render_comparativa_card(
+    card: Optional[Dict[str, Any]],
+    fallback_title: str,
+) -> str:
+    title = fallback_title
+    html: List[str] = ['<div class="preview-card">']
+    if card:
+        home_title = safe_text(card.get("title_home_name", ""))
+        away_title = safe_text(card.get("title_away_name", ""))
+        if home_title or away_title:
+            title = f"{home_title or 'Local'} vs. Ult. rival de {away_title or 'Visitante'}"
+        html.append(f"<h6>{title}</h6>")
+        score = card.get("score")
+        if score:
+            safe_score = safe_text(score).replace(":", " - ")
+            html.append(f'<div class="score">{safe_score}</div>')
+        teams = ""
+        home_team = card.get("home_team")
+        away_team = card.get("away_team")
+        if home_team and away_team:
+            teams = f'<div class="teams-line">{safe_text(home_team)} vs {safe_text(away_team)}</div>'
+        if teams:
+            html.append(teams)
+        pills = []
+        if card.get("localia"):
+            pills.append(f'<span class="meta-pill">Localia: {safe_text(card["localia"])}</span>')
+        if card.get("ah"):
+            pills.append(f'<span class="meta-pill">AH: {safe_text(card["ah"])}</span>')
+        if card.get("ou"):
+            pills.append(f'<span class="meta-pill">O/U: {safe_text(card["ou"])}</span>')
+        if pills:
+            html.append(f"<div>{''.join(pills)}</div>")
+        cover_html = format_cover_status(card.get("cover_status"))
+        if cover_html:
+            html.append(f'<div class="meta-line">Estado: {cover_html}</div>')
+        stats_html = render_stats_table_html(card.get("stats_rows"))
+        if stats_html:
+            html.append(stats_html)
+        analysis = card.get("analysis")
+        if analysis:
+            html.append(f'<div class="analysis-text">{safe_text(analysis)}</div>')
+    else:
+        html.append(f"<h6>{title}</h6>")
+        html.append('<p class="empty-hint">Sin datos disponibles para este cruce.</p>')
     html.append("</div>")
     return "".join(html)
 
@@ -388,15 +508,15 @@ def build_analysis_html(payload: Dict[str, Any], match: Dict[str, Any]) -> str:
         parts.append(f'<div class="card-grid {grid_class}">{"".join(top_cards)}</div>')
 
     comparativas = payload.get("comparativas_indirectas") or {}
-    comp_cards = [
-        render_comparativa_card(comparativas.get("left")),
-        render_comparativa_card(comparativas.get("right")),
-    ]
-    comp_cards = [card for card in comp_cards if card]
-    if comp_cards:
-        parts.append(f'<div class="card-grid grid-2">{"".join(comp_cards)}</div>')
+    left_title = f"{home} vs Ult. rival de {away}"
+    right_title = f"{away} vs Ult. rival de {home}"
+    left_card = render_comparativa_card(comparativas.get("left"), left_title)
+    right_card = render_comparativa_card(comparativas.get("right"), right_title)
+    parts.append(f'<div class="card-grid grid-2">{left_card}{right_card}</div>')
 
-    if not top_cards and not comp_cards and not simplified_html:
+    if not top_cards and not simplified_html and all(
+        "Sin datos disponibles" in card for card in (left_card, right_card)
+    ):
         parts.append('<div class="preview-card"><p class="empty-hint">No se encontraron datos para este partido.</p></div>')
 
     parts.append(HTML_WRAPPER_END)
@@ -482,37 +602,100 @@ def render_filters(matches: List[Dict[str, Any]], mode: str) -> None:
     options = extract_handicap_options(matches)
     filter_key = f"{mode}_handicap_filter_value"
     input_key = f"{mode}_handicap_filter_input"
-    col_filter, col_buttons = st.columns([3, 1])
-    with col_filter:
+    expanded = bool(st.session_state.get(filter_key))
+    with st.expander("Filtrar por handicap", expanded=expanded):
+        st.write("Introduce handicaps separados por comas. Ejemplo: `0, 0.25, -0.5`.")
         st.text_input(
-            "Filtrar por handicap (ej. 0, 0.25, -0.5)",
+            "Valores de handicap",
             key=input_key,
+            placeholder="Ej. 0.25, -0.75",
         )
         if options:
-            st.caption("Opciones disponibles: " + ", ".join(options))
-    with col_buttons:
-        if st.button("Aplicar filtro", key=f"{mode}_apply_filter"):
+            st.caption("Valores detectados en la tabla: " + ", ".join(options))
+        action_cols = st.columns(2)
+        if action_cols[0].button("Aplicar filtro", key=f"{mode}_apply_filter"):
             st.session_state[filter_key] = st.session_state.get(input_key, "").strip()
             st.rerun()
-        if st.button("Limpiar filtro", key=f"{mode}_clear_filter"):
+        if action_cols[1].button("Limpiar filtro", key=f"{mode}_clear_filter"):
             st.session_state[filter_key] = ""
             st.session_state[input_key] = ""
             st.rerun()
 
 
+
+def build_match_card_html(match: Dict[str, Any], mode: str) -> str:
+    home = safe_text(match.get("home_team", "Local"))
+    away = safe_text(match.get("away_team", "Visitante"))
+    competition = safe_text(match.get("league") or match.get("competition") or match.get("country") or "Partido")
+    kickoff_parts: List[str] = []
+    for key in ("match_date", "date", "kickoff"):
+        value = match.get(key)
+        if value:
+            kickoff_parts.append(safe_text(value))
+            break
+    time_value = match.get("time") or match.get("match_time")
+    if time_value:
+        kickoff_parts.append(safe_text(time_value))
+    kickoff = " · ".join([token for token in kickoff_parts if token])
+    handicap = safe_text(match.get("handicap", "N/A"))
+    goal_line = safe_text(match.get("goal_line", "N/A"))
+    match_id = safe_text(match.get("id"))
+    score_block = ""
+    if mode == "finished":
+        score = safe_text(match.get("score", "-"))
+        if score:
+            score_block = f'<div class="match-card__score">{score.replace(":", " - ")}</div>'
+    tags: List[str] = []
+    if handicap and handicap.upper() != "N/A":
+        tags.append(f'<span class="match-card__tag">AH {handicap}</span>')
+    if goal_line and goal_line.upper() != "N/A":
+        tags.append(f'<span class="match-card__tag">O/U {goal_line}</span>')
+    if match_id:
+        tags.append(f'<span class="match-card__tag">ID {match_id}</span>')
+    league_round = match.get("round") or match.get("stage")
+    if league_round:
+        tags.append(f'<span class="match-card__tag">{safe_text(league_round)}</span>')
+    meta_line = ""
+    venue = match.get("venue") or match.get("stadium")
+    if venue:
+        meta_line = f'<div class="match-card__meta">Sede: {safe_text(venue)}</div>'
+    html_parts = [
+        '<div class="match-card">',
+        '<div class="match-card__header">',
+        f"<span>{competition}</span>",
+        f"<span>{kickoff or 'Horario por confirmar'}</span>",
+        "</div>",
+        '<div class="match-card__teams">',
+        f'<span class="match-card__team">{home}</span>',
+        '<span class="match-card__vs">vs</span>',
+        f'<span class="match-card__team">{away}</span>',
+        "</div>",
+    ]
+    if score_block:
+        html_parts.append(score_block)
+    if tags:
+        html_parts.append(f'<div class="match-card__tags">{"".join(tags)}</div>')
+    if meta_line:
+        html_parts.append(meta_line)
+    html_parts.append("</div>")
+    return "".join(html_parts)
+
 def render_actions(container, match: Dict[str, Any], mode: str, idx: int) -> None:
     match_id = str(match["id"])
     with container:
-        link_col, preview_col = st.columns([1, 1])
-        link_col.markdown(
-            f'<a href="?estudio_id={match_id}" target="_blank" title="Abrir estudio completo">📊</a>',
+        st.markdown(
+            f'<a class="match-action-link" href="?estudio_id={match_id}" target="_blank" title="Abrir estudio completo">Estudio completo</a>',
             unsafe_allow_html=True,
         )
-        if preview_col.button("👁", key=f"preview_button_{mode}_{match_id}_{idx}", help="Mostrar vista previa"):
+        if st.button(
+            "Vista previa",
+            key=f"preview_button_{mode}_{match_id}_{idx}",
+            help="Mostrar vista previa dentro del panel",
+            use_container_width=True,
+        ):
             current = st.session_state.get("active_preview_id")
             st.session_state["active_preview_id"] = None if current == match_id else match_id
             st.rerun()
-
 
 def render_mode_section(matches: List[Dict[str, Any]], mode: str) -> None:
     render_filters(matches, mode)
@@ -527,43 +710,20 @@ def render_mode_section(matches: List[Dict[str, Any]], mode: str) -> None:
         st.info("No se encontraron partidos con los criterios seleccionados.")
         return
 
-    if mode == "finished":
-        headers = st.columns([1, 3, 1, 1, 1, 1])
-        headers[0].write("**Hora**")
-        headers[1].write("**Partido**")
-        headers[2].write("**Marcador**")
-        headers[3].write("**Handicap**")
-        headers[4].write("**Línea de goles**")
-        headers[5].write("**Acciones**")
-    else:
-        headers = st.columns([1, 3, 1, 1, 1])
-        headers[0].write("**Hora**")
-        headers[1].write("**Partido**")
-        headers[2].write("**Handicap**")
-        headers[3].write("**Línea de goles**")
-        headers[4].write("**Acciones**")
-
+    st.markdown('<div class="match-grid">', unsafe_allow_html=True)
     for idx, match in enumerate(filtered_matches):
-        if mode == "finished":
-            cols = st.columns([1, 3, 1, 1, 1, 1])
-            cols[0].write(match.get("time", ""))
-            cols[1].write(f"{match.get('home_team', 'N/A')} vs {match.get('away_team', 'N/A')}")
-            cols[2].write(match.get("score", ""))
-            cols[3].write(match.get("handicap", "N/A"))
-            cols[4].write(match.get("goal_line", "N/A"))
-            render_actions(cols[5], match, mode, idx)
-        else:
-            cols = st.columns([1, 3, 1, 1, 1])
-            cols[0].write(match.get("time", ""))
-            cols[1].write(f"{match.get('home_team', 'N/A')} vs {match.get('away_team', 'N/A')}")
-            cols[2].write(match.get("handicap", "N/A"))
-            cols[3].write(match.get("goal_line", "N/A"))
-            render_actions(cols[4], match, mode, idx)
-
+        with st.container():
+            card_col, actions_col = st.columns([4, 1])
+            card_col.markdown(build_match_card_html(match, mode), unsafe_allow_html=True)
+            with actions_col:
+                st.markdown('<div class="match-actions">', unsafe_allow_html=True)
+                render_actions(st.container(), match, mode, idx)
+                st.markdown('</div>', unsafe_allow_html=True)
         if st.session_state.get("active_preview_id") == match["id"]:
             with st.container():
                 render_preview_for_match(match)
-
+        st.markdown('<div style="height:8px;"></div>', unsafe_allow_html=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 def render_manual_analysis_form() -> None:
     st.divider()
@@ -582,9 +742,18 @@ def render_manual_analysis_form() -> None:
 
 def run_main_page() -> None:
     global DATA_FILE
-    st.title("Panel Descarga_Todo en Streamlit")
-    st.caption("Los datos se leen desde data.json. Usa el botón para ejecutar el scraper original.")
-    if st.button("Ejecutar scraping (1200+ partidos)", key="scraper_button"):
+    data = load_data_from_file()
+    upcoming = data.get("upcoming_matches", [])
+    finished = data.get("finished_matches", [])
+
+    header_col, action_col = st.columns([3, 1])
+    with header_col:
+        st.title("Panel Descarga_Todo en Streamlit")
+        st.caption("Monitoriza los partidos y actualiza el dataset original cuando lo necesites.")
+    with action_col:
+        trigger_scraper = st.button("Actualizar datos", key="scraper_button", use_container_width=True)
+
+    if trigger_scraper:
         with st.spinner("Ejecutando run_scraper.py..."):
             ensure_playwright()
             try:
@@ -605,7 +774,6 @@ def run_main_page() -> None:
                 st.success("Scraping completado. data.json actualizado.")
                 if result.stdout.strip():
                     st.text_area("Salida del scraping", result.stdout, height=200)
-                # Aseguramos que el archivo esté disponible tanto en la raíz como en Descarga_Todo
                 desc_data = SCRAPER_SCRIPT.parent / "data.json"
                 root_data = PROJECT_ROOT / "data.json"
                 if desc_data.exists():
@@ -614,26 +782,29 @@ def run_main_page() -> None:
                         shutil.copy2(desc_data, root_data)
                     except Exception as copy_exc:
                         st.warning(f"No se pudo sincronizar data.json en la raíz: {copy_exc}")
-                        # DATA_FILE ya apunta a desc_data; mantenemos esa referencia
-            st.cache_data.clear()
-            st.rerun()
+        st.cache_data.clear()
+        st.rerun()
 
-    data = load_data_from_file()
-    upcoming = data.get("upcoming_matches", [])
-    finished = data.get("finished_matches", [])
+    kpi_cols = st.columns(3)
+    kpi_cols[0].metric("Próximos", len(upcoming))
+    kpi_cols[1].metric("Finalizados", len(finished))
+    try:
+        updated_dt = datetime.fromtimestamp(DATA_FILE.stat().st_mtime).astimezone()
+        kpi_cols[2].metric("Última actualización", updated_dt.strftime("%d/%m %H:%M"))
+    except FileNotFoundError:
+        kpi_cols[2].metric("Última actualización", "Sin datos")
 
-    tab_upcoming, tab_finished = st.tabs(
-        [
-            f"Próximos partidos ({len(upcoming)})",
-            f"Resultados finalizados ({len(finished)})",
-        ]
-    )
+    st.divider()
+
+    tab_upcoming, tab_finished = st.tabs([
+        f"Próximos partidos ({len(upcoming)})",
+        f"Resultados finalizados ({len(finished)})",
+    ])
     with tab_upcoming:
         render_mode_section(upcoming, "upcoming")
     with tab_finished:
         render_mode_section(finished, "finished")
         render_manual_analysis_form()
-
 
 def build_estudio_html(datos: Dict[str, Any]) -> Optional[str]:
     if JINJA_ENV is None:
@@ -666,11 +837,6 @@ def build_estudio_html(datos: Dict[str, Any]) -> Optional[str]:
 
 
 def render_estudio_view(match_id: str) -> None:
-    st.title("Estudio avanzado del partido")
-    if st.button("Volver al panel principal", key="back_button_top"):
-        st.query_params.clear()
-        st.session_state["active_preview_id"] = None
-        st.rerun()
 
     with st.spinner("Cargando estudio completo..."):
         data = obtener_datos_completos_partido(match_id)
@@ -697,6 +863,7 @@ def render_estudio_view(match_id: str) -> None:
 
 
 def main() -> None:
+    inject_global_styles()
     if "active_preview_id" not in st.session_state:
         st.session_state["active_preview_id"] = None
 
@@ -714,3 +881,9 @@ def main() -> None:
 
 
 main()
+
+
+
+
+
+
